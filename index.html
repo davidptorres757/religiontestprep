@@ -33,6 +33,7 @@
             justify-content: center;
             align-items: center;
             font-size: 20px;
+            transition: background-color 0.5s;
         }
         .flashcard .term {
             background-color: #007bff;
@@ -46,6 +47,13 @@
             border-radius: 5px;
             padding: 5px 10px;
             display: none;
+            transform: rotateY(180deg); /* Initially hidden */
+        }
+        .flashcard.flipped .front {
+            transform: rotateY(180deg);
+        }
+        .flashcard.flipped .back {
+            transform: rotateY(0deg);
         }
     </style>
 </head>
