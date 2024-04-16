@@ -1,25 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Religion Test Prep</title>
+    <title>Flashcards</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        h2 {
-            color: #333;
-        }
-        p {
-            margin-bottom: 20px;
+        .flashcard {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
         }
         .definition {
             font-weight: bold;
@@ -28,39 +22,45 @@
     </style>
 </head>
 <body>
-    <h1>Religion Test Prep</h1>
+    <div id="flashcards-container">
+        <!-- Flashcards will be added here dynamically -->
+    </div>
 
-    <h2>Original Sin</h2>
-    <p class="definition">Original Sin</p>
-    <p>- the sin committed by Adam and Eve that affects all of humanity (like a disease)</p>
+    <script>
+        // Flashcards data (definitions)
+        const flashcardsData = [
+            { term: 'Original Sin', definition: 'The sin committed by Adam and Eve that affects all of humanity (like a disease)' },
+            { term: 'Concupiscence', definition: 'The inclination to sin that all human beings are born with (like the natural desires you have for things that are not good for you)' },
+            { term: 'Temptation', definition: 'An actual enticement to sin (like someone who invites you to do drugs)' },
+            { term: 'Personal Sin', definition: 'A sin that a person actually commits (you must make the free decision)' }
+            // Add more flashcards here if needed
+        ];
 
-    <h2>Concupiscence</h2>
-    <p class="definition">Concupiscence</p>
-    <p>- the inclination to sin that all human beings are born with (like the natural desires you have for things that are not good for you)</p>
+        // Function to create flashcard elements
+        function createFlashcard(term, definition) {
+            const flashcard = document.createElement('div');
+            flashcard.classList.add('flashcard');
+            flashcard.innerHTML = `
+                <div class="term">${term}</div>
+                <div class="definition" style="display: none;">${definition}</div>
+                <button onclick="revealDefinition(this)">Reveal Definition</button>
+            `;
+            return flashcard;
+        }
 
-    <h2>Temptation</h2>
-    <p class="definition">Temptation</p>
-    <p>- an actual enticement to sin (like someone who invites you to do drugs)</p>
+        // Function to reveal definition when button is clicked
+        function revealDefinition(button) {
+            const flashcard = button.parentNode;
+            const definition = flashcard.querySelector('.definition');
+            definition.style.display = 'block';
+        }
 
-    <h2>Personal Sin</h2>
-    <p class="definition">Personal Sin</p>
-    <p>- a sin that a person actually commits (you must make the free decision)</p>
-
-    <h2>Baptism and Concupiscence</h2>
-    <p>Baptism takes away Original Sin, but not concupiscence.</p>
-    <p><strong>Why Doesn’t Baptism take away concupiscence?</strong></p>
-    <p>Christian life involves an ongoing struggle against sin and temptation. Concupiscence represents one aspect of this struggle. While baptism initiates a person into the life of grace through justification, it doesn't mean that they are suddenly immune to the effects of sin or temptation. Instead, it marks the beginning of a lifelong journey of growth in holiness and continual conversion. Through baptism, Catholics receive God’s grace, which helps them resist sin and grow in holiness. However, overcoming concupiscence requires ongoing effort and cooperation with God's grace. It's a process of continually choosing to align one's will with God's and resisting the temptations that arise from concupiscence.</p>
-
-    <h2>Sin</h2>
-    <p><strong>Sin is an offense against:</strong></p>
-    <ul>
-        <li>Reason</li>
-        <li>Truth</li>
-        <li>Right conscience</li>
-    </ul>
-    <p><strong>Example:</strong> Copying and pasting from ChatGPT for an English essay and claiming that it is your own work.</p>
-
-    <!-- More content goes here -->
-
+        // Initialize flashcards
+        const flashcardsContainer = document.getElementById('flashcards-container');
+        flashcardsData.forEach(data => {
+            const flashcard = createFlashcard(data.term, data.definition);
+            flashcardsContainer.appendChild(flashcard);
+        });
+    </script>
 </body>
 </html>
