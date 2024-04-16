@@ -3,101 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards</title>
+    <title>Religion Test Prep</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
         }
-        .flashcard {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 200px;
-            height: 150px;
+        h1 {
             text-align: center;
-            cursor: pointer;
-            transition: transform 0.5s;
-            perspective: 1000px;
-        }
-        .flashcard:hover {
-            transform: rotateY(180deg);
-        }
-        .flashcard .card-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            transition: transform 0.5s;
-        }
-        .flashcard .term {
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            padding: 5px 10px;
-        }
-        .flashcard .definition {
-            background-color: #eee;
             color: #333;
-            border-radius: 5px;
-            padding: 5px 10px;
-            transform: rotateY(180deg);
-            display: none;
         }
-        .flashcard.flipped .front {
-            transform: rotateY(-180deg);
-            display: none;
+        h2 {
+            color: #333;
         }
-        .flashcard.flipped .back {
-            transform: rotateY(0deg);
-            display: block;
+        p {
+            margin-bottom: 20px;
+        }
+        .definition {
+            font-weight: bold;
+            color: #007bff;
         }
     </style>
 </head>
 <body>
-    <div id="flashcards-container">
-        <!-- Flashcards will be added here dynamically -->
-    </div>
+    <h1>Religion Test Prep</h1>
 
-    <script>
-        // Flashcards data (definitions)
-        const flashcardsData = [
-            { term: 'Original Sin', definition: 'The sin committed by Adam and Eve that affects all of humanity (like a disease)' },
-            { term: 'Concupiscence', definition: 'The inclination to sin that all human beings are born with (like the natural desires you have for things that are not good for you)' },
-            { term: 'Temptation', definition: 'An actual enticement to sin (like someone who invites you to do drugs)' },
-            { term: 'Personal Sin', definition: 'A sin that a person actually commits (you must make the free decision)' }
-            // Add more flashcards here if needed
-        ];
+    <h2>Original Sin</h2>
+    <p class="definition">Original Sin</p>
+    <p>- the sin committed by Adam and Eve that affects all of humanity (like a disease)</p>
 
-        // Function to create flashcard elements
-        function createFlashcard(term, definition) {
-            const flashcard = document.createElement('div');
-            flashcard.classList.add('flashcard');
-            flashcard.innerHTML = `
-                <div class="card-face front">
-                    <div class="term">${term}</div>
-                </div>
-                <div class="card-face back">
-                    <div class="definition">${definition}</div>
-                </div>
-            `;
-            flashcard.addEventListener('click', function() {
-                flashcard.classList.toggle('flipped');
-            });
-            return flashcard;
-        }
+    <h2>Concupiscence</h2>
+    <p class="definition">Concupiscence</p>
+    <p>- the inclination to sin that all human beings are born with (like the natural desires you have for things that are not good for you)</p>
 
-        // Initialize flashcards
-        const flashcardsContainer = document.getElementById('flashcards-container');
-        flashcardsData.forEach(data => {
-            const flashcard = createFlashcard(data.term, data.definition);
-            flashcardsContainer.appendChild(flashcard);
-        });
-    </script>
+    <h2>Temptation</h2>
+    <p class="definition">Temptation</p>
+    <p>- an actual enticement to sin (like someone who invites you to do drugs)</p>
+
+    <h2>Personal Sin</h2>
+    <p class="definition">Personal Sin</p>
+    <p>- a sin that a person actually commits (you must make the free decision)</p>
+
+    <h2>Baptism and Concupiscence</h2>
+    <p>Baptism takes away Original Sin, but not concupiscence.</p>
+    <p><strong>Why Doesn’t Baptism take away concupiscence?</strong></p>
+    <p>Christian life involves an ongoing struggle against sin and temptation. Concupiscence represents one aspect of this struggle. While baptism initiates a person into the life of grace through justification, it doesn't mean that they are suddenly immune to the effects of sin or temptation. Instead, it marks the beginning of a lifelong journey of growth in holiness and continual conversion. Through baptism, Catholics receive God’s grace, which helps them resist sin and grow in holiness. However, overcoming concupiscence requires ongoing effort and cooperation with God's grace. It's a process of continually choosing to align one's will with God's and resisting the temptations that arise from concupiscence.</p>
+
+    <h2>Sin</h2>
+    <p><strong>Sin is an offense against:</strong></p>
+    <ul>
+        <li>Reason</li>
+        <li>Truth</li>
+        <li>Right conscience</li>
+    </ul>
+    <p><strong>Example:</strong> Copying and pasting from ChatGPT for an English essay and claiming that it is your own work.</p>
+
+    <!-- More content goes here -->
+
 </body>
 </html>
